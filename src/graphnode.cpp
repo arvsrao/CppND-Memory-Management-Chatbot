@@ -1,21 +1,9 @@
 #include "graphedge.h"
 #include "graphnode.h"
 
-GraphNode::GraphNode(int id)
-{
-    _id = id;
-}
+GraphNode::GraphNode(int id) : _id(id) {}
 
-GraphNode::~GraphNode()
-{
-    //// STUDENT CODE
-    ////
-
-    delete _chatBot; 
-
-    ////
-    //// EOF STUDENT CODE
-}
+GraphNode::~GraphNode() { delete _chatBot; }
 
 void GraphNode::AddToken(std::string token)
 {
