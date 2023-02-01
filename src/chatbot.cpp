@@ -47,8 +47,10 @@ ChatBot::ChatBot(ChatBot& chatbot) {
 
     std::cout << "ChatBot Copy Constructor" << std::endl;
 
-    // hand over ownership of
-    _image       = chatbot._image;
+    // deep copy the image from RHS
+    _image = new wxBitmap();
+    _image = chatbot._image;
+    
     _currentNode = chatbot._currentNode;
     _chatLogic   = chatbot._chatLogic;
     _rootNode    = chatbot._rootNode;
@@ -62,8 +64,10 @@ ChatBot& ChatBot::operator=(const ChatBot& rhs) {
 
     if (this == &rhs) return *this;
 
-    // hand over ownership of
-    _image       = rhs._image;
+    // deep copy the image from RHS
+    _image = new wxBitmap();
+    _image = rhs._image;
+
     _currentNode = rhs._currentNode;
     _chatLogic   = rhs._chatLogic;
     _rootNode    = rhs._rootNode;
